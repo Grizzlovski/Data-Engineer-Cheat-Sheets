@@ -1,0 +1,7 @@
+# Clickhouse Cheatsheet
+
+#
+# Создание таблиц
+```
+
+```

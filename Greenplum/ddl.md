@@ -1,0 +1,1 @@
+# Greenplum Cheatsheet DDL

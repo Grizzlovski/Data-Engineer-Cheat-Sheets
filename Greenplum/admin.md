@@ -1,7 +1,6 @@
-# Greenplum Cheatsheet
+# Greenplum Cheatsheet ADMIN
 
-#
-# Свободное место на диске
+### Использование дискового пространства
 ```
 select * from gp_toolkit.gp_disk_free
 ```

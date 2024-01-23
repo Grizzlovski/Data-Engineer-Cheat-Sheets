@@ -17,16 +17,36 @@ https://codernet.ru/articles/drugoe/oracle_particzirovanie_tablicz_kak_upravlyat
 
 
 ### По диапазону значений (range partitioning)
+Пример:
 ```
-CREATE TABLE MY.NEWTABLE ( ISN NEWNUMBERS. UPDATED NEWDATES) TABLESPACES HSTNEWDATA
-PARTITION BY RANGE (ISN)
-    (PARTITION PARTISAN_01 VALUE LESS THAN (1500),
-    PARTITION PARTISAN_02 VALUE LESS THAN (2500),
-    PARTITION PARTISAN_03 VALUE LESS THAN (3500),
-    PARTITION PARTISAN_MAXIMUM VALUE LESS THAN (MAXVALUES)
-    ) ENABLE ROW MOVEMENT;
+CREATE TABLE sales_range_partition ( 
+    product_id       NUMBER(6), 
+    customer_id      NUMBER, 
+    channel_id       CHAR(1), 
+    promo_id         NUMBER(6), 
+    sale_date        DATE, 
+    quantity_sold    INTEGER, 
+    amount_sold      NUMBER(10,2) 
+) 
+
+   PARTITION BY RANGE (sale_date) 
+(  
+   PARTITION sales_q1_2014 VALUES LESS THAN (TO_DATE('01-APR-2014','dd-MON-yyyy')), 
+   PARTITION sales_q2_2014 VALUES LESS THAN (TO_DATE('01-JUL-2014','dd-MON-yyyy')), 
+   PARTITION sales_q3_2014 VALUES LESS THAN (TO_DATE('01-OCT-2014','dd-MON-yyyy')), 
+   PARTITION sales_q4_2014 VALUES LESS THAN (TO_DATE('01-JAN-2015','dd-MON-yyyy')) 
+)
 ```
-ENABLE ROW MOVEMENT - позволяет серверу менять rowid
+Чтение определенной партиции:
+```
+SELECT * FROM sales_range_partition PARTITION(sales_q3_2014)
+```
+
+Добавление партиции:
+```
+ALTER TABLE sales_range_partition 
+      ADD PARTITION sales_q1_2015 VALUES LESS THAN (TO_DATE('01-APR-2015','dd-MON-yyyy'))
+```
 
 ### По спискам значений (list partitioning)
 Пример:

@@ -51,17 +51,26 @@ CREATE TABLE sales_by_region (
         VALUES ('IA','IL','MO','MI','ND','OH','SD') 
  )
 ```
+Чтение определенной партиции:
+```
+SELECT * FROM sales_by_region PARTITION(region_east)
+```
 Добавление партиции:
 ```
 ALTER TABLE sales_by_region 
    ADD PARTITION region_nonmainland VALUES ('HI','PR')
 ```
-
-Просмотр партиций:
+Модификация партиции:
+```
+ALTER TABLE sales_by_region 
+   MODIFY PARTITION region_central 
+      ADD VALUES ('OK','KS')
+```
+Просмотр списка партиций:
 ```
 SELECT TABLE_NAME,PARTITION_NAME, PARTITION_POSITION, HIGH_VALUE FROM USER_TAB_PARTITIONS WHERE TABLE_NAME ='SALES_BY_REGION'
 ```
-вернёт
+вернёт:
 
 | TABLE_NAME       | PARTITION_NAME | PARTITION_POSITION | HIGH_VALUE                                            |
 |------------------|-------------|--------------------|-------------------------------------------------------|

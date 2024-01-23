@@ -22,6 +22,6 @@
 | Типы данных                                            |  |
 | Создание таблиц                                        |  |
 | Индексы                                                |  |
-| Партиционирование (Секционирование)<br/>(Partitioning) | [oracle_partitions](Oracle/oracle_partitions.md) |
+| Партиционирование<br/>(Секционирование)<br/>(Partitioning) | [oracle_partitions](Oracle/oracle_partitions.md) |
 | Администрирование                                      |                                         |
 | План запроса                                           |                                        |

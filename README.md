@@ -25,3 +25,10 @@
 | Партиционирование<br/>(Секционирование)<br/>(Partitioning) | [oracle_partitions](Oracle/oracle_partitions.md) |                                                              |
 | Администрирование                                          |                                                  |                                                              |
 | План запроса<br/>(query plan)                                  |                                                  | [postgresql_query_plan](PostgreSQL/postgresql_query_plan.md) |
+
+### Greenplum
+| Раздел                       | Ссылка | 
+|------------------------------|--------|
+| Концепции                    | | 
+| Типы данных<br/>(data types) | | 
+| Таблицы<br/>(data types)     | | 

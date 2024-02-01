@@ -16,9 +16,9 @@
 
 # Навигация
 ## СУБД
-[Greenplum](#greenplum)
-[Oracle](#oracle)
-[PostgreSQL](#postrgresql)
+[Greenplum](#greenplum)<br>
+[Oracle](#oracle)<br>
+[PostgreSQL](#postgresql)
 
 ## ETL-инструменты
 Airflow

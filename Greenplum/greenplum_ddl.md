@@ -1,4 +1,4 @@
-# Greenplum Cheatsheet DDL
+# Greenplum. DDL
 
 
 ### Создание таблиц
